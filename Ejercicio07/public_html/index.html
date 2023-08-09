@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Ejercicio 7 de JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <label for="entrada">Escriba un número a sumar</label>
+        <input type="text" id="entrada">
+        <input type="button" value="Sumar" onclick="calcular()">
+        <div id="resultado"></div>
+        <script>
+            var limite = parseInt(prompt("Ingrese el límite a superar con las sumas"));
+            var suma = 0;
+            function calcular() {
+                let numero = parseInt(document.getElementById("entrada").value);
+                suma += numero;
+                if (suma >= limite)
+                    document.getElementById("resultado").innerHTML = `La suma de los números ingresados es ${suma}`;
+            }
+        </script>
+    </body>
+</html>
