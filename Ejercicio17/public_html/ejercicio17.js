@@ -20,7 +20,7 @@ for (var i = 0; i < arreglo1.length; i++) {
 console.log("Los datos actuales: \n" + arreglo1.toString());
 
 console.log("Los datos ahora: \n" + arreglo1.slice(0, 3)); //el cuarto (posicion 3) no se incluye.
-for (var dato in arreglo1) {
+for (var dato in arreglo1.slice(0,3)) {
     console.log(arreglo1.slice(0,3)[dato]);
     elempag=document.getElementById(`elItem_${arreglo1.slice(0,3)[dato]}`);
     elempag.setAttribute("class","fs-4");
