@@ -13,5 +13,7 @@ let azar = [arreglo.map((este) => {
     })];
 console.log(azar);
 var elDiv = document.getElementById("contenido");
-elDiv.appendChild(document.createElement("p"));
-elDiv.insertAdjacentText("beforeend",azar.toString());
+paras = document.createElement("p");
+paras.setAttribute("class", "card card-safe fs-2 text-center");
+elDiv.appendChild(paras);
+paras.insertAdjacentText("beforeend",azar.toString());
