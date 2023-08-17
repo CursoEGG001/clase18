@@ -3,20 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
  */
 
-function resaltarPalabrasLargas(area) {
-    // Obtener el contenido del área de texto.
-    var compaginador = document.getElementById("contenidos");
-    var texto = area.value;
+function resaltarPalabrasLargas() {
 
-    // Crear un array con las palabras del área de texto.
+    // Obtener el contenido del área de texto.
+
+    var compaginador = document.getElementById("contenidos");
+    compaginador.innerHTML="";
+    var area = document.querySelector("textarea");
+    var texto = area.value;
+    // Crear un array con las palabras del texto.
     var palabras = texto.split(" ");
 
     // Crear un array con las palabras largas.
     var palabrasLargas = palabras.filter(function (palabra) {
         return palabra.length >= 8;
     });
-
-    area.value = "";
 
     // Recorrer el array de palabras largas y resaltarlas en el área de texto.
     for (var i = 0; i < palabras.length; i++) {
@@ -31,12 +32,13 @@ function resaltarPalabrasLargas(area) {
 
         }
         if (coincidencia) {
-            compaginador.innerHTML += `<br><mark>${marcado}</mark> `;
+            compaginador.innerHTML += `<mark>${marcado}</mark> `;
         } else {
-            compaginador.innerHTML += palabras[i] + " ";
+            compaginador.innerHTML += `${palabras[i]} `;
         }
     }
 }
 
-let remarca = document.querySelector("textarea");
-remarca.addEventListener("input",resaltarPalabrasLargas(document.getElementById("area")));
+
+let remarca = document.getElementById("area");
+remarca.addEventListener("change", () => (resaltarPalabrasLargas()));
