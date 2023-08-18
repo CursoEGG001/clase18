@@ -13,3 +13,4 @@ for (var i = 0; i < cadena.length; i++) {
     resultado += cadena.substring(i, i + 1) + " ";
 }
 window.alert(resultado + "\n Sería la cadena final");
+document.body.innerHTML = "<h3>" + resultado + "</h3>";
