@@ -30,5 +30,11 @@ function calculaArea() {
     contenido.innerHTML = parseFloat(rad).toFixed(4) + " sería el radio ~";
 }
 
-manejaevento1.addEventListener("input", () => calculaArea()());
-manejaevento2.addEventListener("input", () => calculaArea()());
+manejaevento1.addEventListener("input", () => {
+    calculaArea();
+    manejaevento2.value = manejaevento1.value;
+});
+manejaevento2.addEventListener("input", () => {
+    calculaArea();
+    manejaevento1.value = manejaevento2.value;
+});
